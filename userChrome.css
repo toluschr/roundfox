@@ -1,0 +1,141 @@
+:root {
+	--toolbarbutton-border-radius: 14px !important; /* Find out how to use % without distortion */
+}
+
+/* Make buttons round */
+#identity-box, #tracking-protection-icon-container, #reader-mode-button, #pageActionButton, #star-button, #star-button-box, #pocket-button-box {
+	border-inline-end: none !important;
+	border-radius: var(--toolbarbutton-border-radius) !important;
+	padding-inline: 3px;
+	margin: 0 -1px !important;
+}
+
+.close-icon, findbar > toolbarbutton > .toolbarbutton-icon {
+	border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+	border-radius: 10px !important;
+}
+/* End of: Make buttons round */
+
+/* Fix some spacing */
+#tabs-newtab-button {
+	margin: 3px !important;
+}
+
+#nav-bar, #PersonalToolbar {
+	padding: 0 3px !important;
+	padding-bottom: 3px !important;
+}
+
+#urlbar {
+	padding: 0px 4px !important;
+}
+
+.urlbar-input-box {
+	padding: 0px 8px !important;
+}
+
+#urlbar-input-container, toolbarbutton.bookmark-item:not(.subviewbutton) {
+	padding: 2px 8px !important;
+}
+
+.findbar-button, .findbar-textbox {
+	padding: 4px 8px !important;
+}
+
+.findbar-button {
+	margin-left: 10px !important;
+}
+
+.findbar-textbox {
+	border-radius: 14px 0px 0px 14px !important;
+}
+
+.findbar-find-next {
+    border-radius: 0px 14px 14px 0px !important;
+}
+
+#urlbar:not(.megabar), #urlbar.megabar > #urlbar-background, #searchbar {
+	border: none !important;
+}
+/* End of: Fix some spacing */
+
+/* Replace the unresponsive spacer */
+.titlebar-spacer, .tab-line {
+	display: none !important;
+}
+
+#TabsToolbar {
+	padding-left: 5px !important;
+}
+/* End of: Replace the unresponsive spacer */
+
+/* I don't know how to style inside #shadow-root */
+scrollbox:not(#PlacesToolbarItems) {
+	overflow: visible !important;
+}
+/* End of: I don't know how to style inside #shadow-root */
+
+/* Remove top bar */
+#navigator-toolbox {
+    --tabs-border-color: none !important;
+}
+/* End of: Remove top bar */
+
+/* Round tabs */
+/* So this messes up everything, even though it looks better
+.tabbrowser-tab, .tabbrowser-tab::before, .tabbrowser-tab::after, .tab-background {
+	transition:
+		background-color 0.15s ease,
+		min-width 0.3s ease,
+		max-width 0.3s ease
+		!important;
+}
+*/
+
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+	pointer-events: none !important;
+	border: none !important;
+	
+	position: absolute;
+	bottom: 0px !important;
+	width: 15px;
+	height: 15px;
+	content: " " !important;
+
+	opacity: 1 !important;
+	margin: 0 !important;
+}
+
+.tabbrowser-tab::after {
+	right: -15px;
+	border-bottom-left-radius: 50%;
+}
+
+.tabbrowser-tab::before {
+	left: -15px;
+	border-bottom-right-radius: 50%;
+}
+
+.tabbrowser-tab[selected="true"]::before {
+	box-shadow: 5px 2px 0 var(--toolbar-bgcolor);
+}
+
+.tabbrowser-tab[selected="true"]::after {
+	box-shadow: -5px 2px 0 var(--toolbar-bgcolor);
+}
+
+.tabbrowser-tab:hover:not([selected="true"])::before {
+	box-shadow: 0px 5px 0 var(--toolbarbutton-hover-background)
+}
+
+.tabbrowser-tab:hover:not([selected="true"])::after {
+	box-shadow: -0px 5px 0 var(--toolbarbutton-hover-background)
+}
+
+.tab-background {
+	border-radius: 10px 10px 0 0 !important;
+}
+/* End of: Round tabs */
